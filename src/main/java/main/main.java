@@ -23,10 +23,10 @@ public class main {
         session.beginTransaction();
         Map<String, WordData> wordMap = new HashMap<String, WordData>();
         UnigramFileIterator unigramIterator = new UnigramFileIterator("input/googlebooks-eng-all-1gram-20120701-g");
-        double mileStone = 0.005;
-        double step = 0.005;
+        double mileStone = 0.001;
+        double step = 0.001;
         FileWordEntity fileWordEntity;
-        while(unigramIterator.hasNext() && unigramIterator.getPartitionProcessed() < 0.03){
+        while(unigramIterator.hasNext() && unigramIterator.getPartitionProcessed() < 0.003){
 
             fileWordEntity = unigramIterator.next();
             WordData wordData;
@@ -58,22 +58,7 @@ public class main {
 
 
 
-    private static void saveWordToDB(WordData wordData){
-        Session session = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            session.saveOrUpdate(wordData);
-            session.getTransaction().commit();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка I/O", JOptionPane.OK_OPTION);
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
-        }
 
-    }
 
 }
 

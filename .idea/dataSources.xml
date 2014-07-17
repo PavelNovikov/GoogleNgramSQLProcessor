@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="724339242">
+    <data-source source="LOCAL" name="hibernate.cfg.xml" uuid="204d99c2-e7c5-4da8-ab7c-4611e2add219">
+      <jdbc-driver>oracle.jdbc.driver.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@localhost:1521:orcl</jdbc-url>
+      <user-name>SYSTEM</user-name>
+      <user-password>dfcbdfcedfc7dfc3dfc4</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
